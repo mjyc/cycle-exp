@@ -1,1 +1,1 @@
-export {createGraph, makeDagreD3Driver} from 'dagreD3';
+export {createGraph, makeDagreD3Driver} from './dagreD3';
