@@ -34,7 +34,7 @@ var BodyDOMSource = /** @class */ (function () {
 }());
 exports.BodyDOMSource = BodyDOMSource;
 
-},{"./fromEvent":12,"@cycle/run/lib/adapt":21,"xstream":467}],2:[function(require,module,exports){
+},{"./fromEvent":12,"@cycle/run/lib/adapt":21,"xstream":468}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var xstream_1 = require("xstream");
@@ -70,7 +70,7 @@ var DocumentDOMSource = /** @class */ (function () {
 }());
 exports.DocumentDOMSource = DocumentDOMSource;
 
-},{"./fromEvent":12,"@cycle/run/lib/adapt":21,"xstream":467}],3:[function(require,module,exports){
+},{"./fromEvent":12,"@cycle/run/lib/adapt":21,"xstream":468}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ScopeChecker_1 = require("./ScopeChecker");
@@ -450,7 +450,7 @@ var EventDelegator = /** @class */ (function () {
 }());
 exports.EventDelegator = EventDelegator;
 
-},{"./ElementFinder":3,"./PriorityQueue":7,"./RemovalSet":8,"./ScopeChecker":9,"./SymbolTree":10,"./fromEvent":12,"./utils":20,"xstream":467}],5:[function(require,module,exports){
+},{"./ElementFinder":3,"./PriorityQueue":7,"./RemovalSet":8,"./ScopeChecker":9,"./SymbolTree":10,"./fromEvent":12,"./utils":20,"xstream":468}],5:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var utils_1 = require("./utils");
@@ -940,7 +940,7 @@ function isPredicate(fn) {
     return typeof fn === 'function';
 }
 
-},{"xstream":467}],13:[function(require,module,exports){
+},{"xstream":468}],13:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // tslint:disable:max-file-line-count
@@ -1646,7 +1646,7 @@ function makeDOMDriver(container, options) {
 }
 exports.makeDOMDriver = makeDOMDriver;
 
-},{"./EventDelegator":4,"./IsolateModule":5,"./MainDOMSource":6,"./VNodeWrapper":11,"./modules":18,"./utils":20,"snabbdom":444,"snabbdom/tovnode":446,"xstream":467,"xstream/extra/concat":465,"xstream/extra/sampleCombine":466}],17:[function(require,module,exports){
+},{"./EventDelegator":4,"./IsolateModule":5,"./MainDOMSource":6,"./VNodeWrapper":11,"./modules":18,"./utils":20,"snabbdom":444,"snabbdom/tovnode":446,"xstream":468,"xstream/extra/concat":465,"xstream/extra/sampleCombine":467}],17:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var xstream_1 = require("xstream");
@@ -1709,7 +1709,7 @@ function mockDOMSource(mockConfig) {
 }
 exports.mockDOMSource = mockDOMSource;
 
-},{"@cycle/run/lib/adapt":21,"xstream":467}],18:[function(require,module,exports){
+},{"@cycle/run/lib/adapt":21,"xstream":468}],18:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var class_1 = require("snabbdom/modules/class");
@@ -58122,7 +58122,7 @@ http.METHODS = [
 	'UNSUBSCRIBE'
 ]
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./lib/request":450,"./lib/response":451,"builtin-status-codes":26,"url":461,"xtend":468}],449:[function(require,module,exports){
+},{"./lib/request":450,"./lib/response":451,"builtin-status-codes":26,"url":461,"xtend":469}],449:[function(require,module,exports){
 (function (global){
 exports.fetch = isFunction(global.fetch) && isFunction(global.ReadableStream)
 
@@ -61142,7 +61142,101 @@ function concat() {
 }
 exports.default = concat;
 
-},{"../index":467}],466:[function(require,module,exports){
+},{"../index":468}],466:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var index_1 = require("../index");
+var DelayOperator = /** @class */ (function () {
+    function DelayOperator(dt, ins) {
+        this.dt = dt;
+        this.ins = ins;
+        this.type = 'delay';
+        this.out = null;
+    }
+    DelayOperator.prototype._start = function (out) {
+        this.out = out;
+        this.ins._add(this);
+    };
+    DelayOperator.prototype._stop = function () {
+        this.ins._remove(this);
+        this.out = null;
+    };
+    DelayOperator.prototype._n = function (t) {
+        var u = this.out;
+        if (!u)
+            return;
+        var id = setInterval(function () {
+            u._n(t);
+            clearInterval(id);
+        }, this.dt);
+    };
+    DelayOperator.prototype._e = function (err) {
+        var u = this.out;
+        if (!u)
+            return;
+        var id = setInterval(function () {
+            u._e(err);
+            clearInterval(id);
+        }, this.dt);
+    };
+    DelayOperator.prototype._c = function () {
+        var u = this.out;
+        if (!u)
+            return;
+        var id = setInterval(function () {
+            u._c();
+            clearInterval(id);
+        }, this.dt);
+    };
+    return DelayOperator;
+}());
+/**
+ * Delays periodic events by a given time period.
+ *
+ * Marble diagram:
+ *
+ * ```text
+ * 1----2--3--4----5|
+ *     delay(60)
+ * ---1----2--3--4----5|
+ * ```
+ *
+ * Example:
+ *
+ * ```js
+ * import fromDiagram from 'xstream/extra/fromDiagram'
+ * import delay from 'xstream/extra/delay'
+ *
+ * const stream = fromDiagram('1----2--3--4----5|')
+ *  .compose(delay(60))
+ *
+ * stream.addListener({
+ *   next: i => console.log(i),
+ *   error: err => console.error(err),
+ *   complete: () => console.log('completed')
+ * })
+ * ```
+ *
+ * ```text
+ * > 1  (after 60 ms)
+ * > 2  (after 160 ms)
+ * > 3  (after 220 ms)
+ * > 4  (after 280 ms)
+ * > 5  (after 380 ms)
+ * > completed
+ * ```
+ *
+ * @param {number} period The amount of silence required in milliseconds.
+ * @return {Stream}
+ */
+function delay(period) {
+    return function delayOperator(ins) {
+        return new index_1.Stream(new DelayOperator(period, ins));
+    };
+}
+exports.default = delay;
+
+},{"../index":468}],467:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../index");
@@ -61318,7 +61412,7 @@ sampleCombine = function sampleCombine() {
 };
 exports.default = sampleCombine;
 
-},{"../index":467}],467:[function(require,module,exports){
+},{"../index":468}],468:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -63065,7 +63159,7 @@ exports.MemoryStream = MemoryStream;
 var xs = Stream;
 exports.default = xs;
 
-},{"symbol-observable":453}],468:[function(require,module,exports){
+},{"symbol-observable":453}],469:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -63086,7 +63180,7 @@ function extend() {
     return target
 }
 
-},{}],469:[function(require,module,exports){
+},{}],470:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63195,7 +63289,7 @@ function makeDagreD3Driver() {
   return dagreD3Driver;
 }
 
-},{"@cycle/dom":14,"@cycle/run/lib/adapt":21,"d3":61,"dagre-d3":62,"xstream":467}],470:[function(require,module,exports){
+},{"@cycle/dom":14,"@cycle/run/lib/adapt":21,"d3":61,"dagre-d3":62,"xstream":468}],471:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63217,5 +63311,112 @@ Object.defineProperty(exports, 'makeDagreD3Driver', {
   }
 });
 
-},{"./dagreD3":469}]},{},[470])(470)
+var _mediaRecorder = require('./mediaRecorder');
+
+Object.defineProperty(exports, 'makeMediaRecorderDriver', {
+  enumerable: true,
+  get: function get() {
+    return _mediaRecorder.makeMediaRecorderDriver;
+  }
+});
+
+},{"./dagreD3":470,"./mediaRecorder":472}],472:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.makeMediaRecorderDriver = exports.isMobile = exports.isiOS = exports.isAndroid = undefined;
+
+var _xstream = require('xstream');
+
+var _xstream2 = _interopRequireDefault(_xstream);
+
+var _delay = require('xstream/extra/delay');
+
+var _delay2 = _interopRequireDefault(_delay);
+
+var _adapt = require('@cycle/run/lib/adapt');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var isAndroid = exports.isAndroid = function isAndroid() {
+  return (/Android/i.test(navigator.userAgent)
+  );
+};
+
+var isiOS = exports.isiOS = function isiOS() {
+  return (/iPhone|iPad|iPod/i.test(navigator.userAgent)
+  );
+};
+
+var isMobile = exports.isMobile = function isMobile() {
+  return isAndroid() || isiOS();
+};
+
+var makeMediaRecorderDriver = exports.makeMediaRecorderDriver = function makeMediaRecorderDriver(options) {
+  if (!options) {
+    options = {};
+  }
+
+  var videoRecorderDriver = function videoRecorderDriver(sink$) {
+    var constraints = options.constraints ? options.constraints : {
+      video: {
+        facingMode: 'user',
+        width: isMobile() ? undefined : 640,
+        height: isMobile() ? undefined : 480
+      },
+      audio: true
+    };
+    var mediaRecorder = null;
+    var blobs = [];
+    var source$ = _xstream2.default.create();
+    navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+      source$.shamefullySendNext({ type: 'READY' });
+      mediaRecorder = new MediaRecorder(stream);
+      mediaRecorder.ondataavailable = function (evt) {
+        blobs.push(evt.data);
+      };
+      mediaRecorder.onstart = function () {
+        source$.shamefullySendNext({ type: 'START' });
+      };
+      mediaRecorder.onstop = function (_) {
+        source$.shamefullySendNext({ type: 'BLOBS', value: blobs });
+        blobs = [];
+      };
+    }).catch(function (err) {
+      console.error('Failed to get MediaStream');
+      throw err;
+    });
+
+    var timeout = options.timeout || 60 * 1000; // 1min
+    var timeout$ = _xstream2.default.of('STOP').compose((0, _delay2.default)(timeout));
+    _xstream2.default.merge(sink$, timeout$).addListener({
+      next: function next(v) {
+        if (v.type === 'COMMAND' || typeof v === 'string') {
+          var cmd = typeof v === 'string' ? v : v.value;
+          if (cmd === 'START') {
+            if (mediaRecorder && mediaRecorder.state !== 'recording') {
+              mediaRecorder.start();
+            } else {
+              console.warn('mediaRecorder.start() not allowed');
+            }
+          } else if (cmd === 'STOP') {
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+              mediaRecorder.stop();
+            } else {
+              console.warn('mediaRecorder.stop() not allowed');
+            }
+          }
+        }
+      }
+    });
+
+    return (0, _adapt.adapt)(source$);
+  };
+
+  return videoRecorderDriver;
+};
+
+},{"@cycle/run/lib/adapt":21,"xstream":468,"xstream/extra/delay":466}]},{},[471])(471)
 });
