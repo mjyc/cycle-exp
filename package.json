@@ -1,0 +1,18 @@
+{
+  "name": "@mjyc/cycle-exp",
+  "version": "0.0.0",
+  "description": "Mike's Experimental Cycle.js Code",
+  "author": "Michael Jae-Yoon Chung",
+  "license": "MIT",
+  "repository": "https://gitlab.cs.washington.edu/mjyc/srsm/tree/master/cycle-dagre-d3",
+  "dependencies": {
+    "@cycle/dom": "22.3.0",
+    "d3": "5.7.0",
+    "dagre-d3": "0.6.3",
+    "xstream": "11.7.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
