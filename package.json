@@ -15,6 +15,8 @@
   "repository": "https://github.com/mjyc/cycle-exp",
   "dependencies": {
     "@cycle/dom": "22.3.0",
+    "chart.js": "2.7.3",
+    "chartjs-plugin-streaming": "1.7.1",
     "d3": "5.7.0",
     "dagre-d3": "0.6.3",
     "xstream": "11.7.0"
