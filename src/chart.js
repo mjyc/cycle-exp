@@ -10,19 +10,33 @@ export function makeStreamingChartDriver(config) {
     instance = new Chart(ctx, config);
   };
 
-  const updateChart = (data) => {
+  const updateChart = (datasets) => {
     if (!instance) {
-      console.warn('Chart is not initialized yet; skipping update');
+      console.warn('Chart is not initialized yet; skipping updating chart');
       return;
     }
-    // data = [data1, ..., dataN]
-    // or data = [{data: data1, stamp: stamp1}, ..., {data: dataN, stamp: stampN}]
-    data.map((d, i) => {
-      // TODO: allow incoming data to be {data: ..., stamp: ...}
-      instance.data.datasets[i].data.push({
-        x: new Date().getTime(),
-        y: d,
+
+    datasets.map((dataset, i) => {
+      Object.keys(dataset).map(k => {
+        instance.data.datasets[i][k] = dataset[k];
       });
+    });
+
+    instance.update({
+      preservation: true
+    });
+  }
+
+  const addDataset = (dataset) => {
+    if (!instance) {
+      console.warn('Chart is not initialized yet; skipping adding dataset');
+      return;
+    }
+    dataset.map((data, i) => {
+      instance.data.datasets[i].data.push((typeof data !== 'object') ? {
+        x: new Date().getTime(),
+        y: data,
+      } : data);
     });
 
     instance.update({
@@ -34,7 +48,6 @@ export function makeStreamingChartDriver(config) {
     if (!instance) {
       console.error('Chart is not initialized yet; returning null');
       return null;
-
     }
     return fromEvent(el, evName)
       .filter(() => instance)
@@ -47,6 +60,9 @@ export function makeStreamingChartDriver(config) {
     });
     sink$.filter(s => s.type === 'UPDATE').addListener({
       next: s => updateChart(s.value),
+    });
+    sink$.filter(s => s.type === 'ADD').addListener({
+      next: s => addDataset(s.value),
     });
 
     return {
