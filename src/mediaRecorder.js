@@ -49,7 +49,7 @@ export const makeMediaRecorderDriver = (options) => {
       throw err;
     });
 
-    const timeout = options.timeout || 60 * 1000; // 1min
+    const timeout = options.timeout || 60 * 10000; // 10mins
     const timeout$ = xs.of('STOP').compose(delay(timeout));
     xs.merge(sink$, timeout$).addListener({
       next: v => {
