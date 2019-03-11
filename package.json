@@ -18,11 +18,12 @@
     "@cycle-robot-drivers/actionbank": "0.0.9",
     "@cycle/dom": "22.3.0",
     "@cycle/isolate": "5.0.0",
+    "@cycle/run": "5.2.0",
     "chart.js": "2.7.3",
     "chartjs-plugin-streaming": "1.7.1",
     "d3": "5.7.0",
     "dagre-d3": "0.6.3",
-    "xstream": "11.7.0"
+    "xstream": "11.10.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

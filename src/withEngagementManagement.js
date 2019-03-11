@@ -342,7 +342,7 @@ function output(reducerState$) {
   };
 };
 
-export function withEngagementManagement(main, options = {}) {
+export default function withEngagementManagement(main, options = {}) {
   const mainWithEngagementManagement = (sources) => {
     // sources.state.stream.addListener({next: rs => console.debug('reducerState', rs)});
     const reducerState$ = sources.state.stream;
