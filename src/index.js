@@ -5,5 +5,9 @@ export {
   default as withEngagementManagement,
   S as withEngagementManagementState,
 } from './withEngagementManagement';
+export {
+  default as withGreeting,
+  S as withGreetingState,
+} from './withGreeting';
 export {makeDownloadDataDriver, DataDownloader} from './recorder_helpers';
 export {default as FSMViz} from './FSMViz';
