@@ -329,7 +329,7 @@ function FlowchartAction(sources) {
 }
 exports.FlowchartAction = FlowchartAction;
 
-},{"./QAWithScreenAction":5,"./SpeakWithScreenAction":7,"@cycle-robot-drivers/action":1,"@cycle/isolate":31,"xstream":541,"xstream/extra/dropRepeats":538}],5:[function(require,module,exports){
+},{"./QAWithScreenAction":5,"./SpeakWithScreenAction":7,"@cycle-robot-drivers/action":1,"@cycle/isolate":31,"xstream":542,"xstream/extra/dropRepeats":538}],5:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -384,7 +384,7 @@ function QAWithScreenAction(sources) {
 }
 exports.QAWithScreenAction = QAWithScreenAction;
 
-},{"./QuestionAnswerAction":6,"./makeConcurrentAction":9,"./utils":10,"@cycle-robot-drivers/action":1,"@cycle/isolate":31,"xstream":541}],6:[function(require,module,exports){
+},{"./QuestionAnswerAction":6,"./makeConcurrentAction":9,"./utils":10,"@cycle-robot-drivers/action":1,"@cycle/isolate":31,"xstream":542}],6:[function(require,module,exports){
 "use strict";
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -562,7 +562,7 @@ function QuestionAnswerAction(sources) {
 }
 exports.QuestionAnswerAction = QuestionAnswerAction;
 
-},{"@cycle-robot-drivers/action":1,"xstream":541}],7:[function(require,module,exports){
+},{"@cycle-robot-drivers/action":1,"xstream":542}],7:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -812,7 +812,7 @@ function makeConcurrentAction(actionNames, isRace) {
 }
 exports.makeConcurrentAction = makeConcurrentAction;
 
-},{"@cycle-robot-drivers/action":1,"xstream":541}],10:[function(require,module,exports){
+},{"@cycle-robot-drivers/action":1,"xstream":542}],10:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -866,7 +866,7 @@ var BodyDOMSource = /** @class */ (function () {
 }());
 exports.BodyDOMSource = BodyDOMSource;
 
-},{"./fromEvent":22,"@cycle/run/lib/adapt":32,"xstream":541}],12:[function(require,module,exports){
+},{"./fromEvent":22,"@cycle/run/lib/adapt":32,"xstream":542}],12:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var xstream_1 = require("xstream");
@@ -902,7 +902,7 @@ var DocumentDOMSource = /** @class */ (function () {
 }());
 exports.DocumentDOMSource = DocumentDOMSource;
 
-},{"./fromEvent":22,"@cycle/run/lib/adapt":32,"xstream":541}],13:[function(require,module,exports){
+},{"./fromEvent":22,"@cycle/run/lib/adapt":32,"xstream":542}],13:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ScopeChecker_1 = require("./ScopeChecker");
@@ -1282,7 +1282,7 @@ var EventDelegator = /** @class */ (function () {
 }());
 exports.EventDelegator = EventDelegator;
 
-},{"./ElementFinder":13,"./PriorityQueue":17,"./RemovalSet":18,"./ScopeChecker":19,"./SymbolTree":20,"./fromEvent":22,"./utils":30,"xstream":541}],15:[function(require,module,exports){
+},{"./ElementFinder":13,"./PriorityQueue":17,"./RemovalSet":18,"./ScopeChecker":19,"./SymbolTree":20,"./fromEvent":22,"./utils":30,"xstream":542}],15:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var utils_1 = require("./utils");
@@ -1772,7 +1772,7 @@ function isPredicate(fn) {
     return typeof fn === 'function';
 }
 
-},{"xstream":541}],23:[function(require,module,exports){
+},{"xstream":542}],23:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // tslint:disable:max-file-line-count
@@ -2478,7 +2478,7 @@ function makeDOMDriver(container, options) {
 }
 exports.makeDOMDriver = makeDOMDriver;
 
-},{"./EventDelegator":14,"./IsolateModule":15,"./MainDOMSource":16,"./VNodeWrapper":21,"./modules":28,"./utils":30,"snabbdom":515,"snabbdom/tovnode":517,"xstream":541,"xstream/extra/concat":536,"xstream/extra/sampleCombine":540}],27:[function(require,module,exports){
+},{"./EventDelegator":14,"./IsolateModule":15,"./MainDOMSource":16,"./VNodeWrapper":21,"./modules":28,"./utils":30,"snabbdom":515,"snabbdom/tovnode":517,"xstream":542,"xstream/extra/concat":536,"xstream/extra/sampleCombine":541}],27:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var xstream_1 = require("xstream");
@@ -2541,7 +2541,7 @@ function mockDOMSource(mockConfig) {
 }
 exports.mockDOMSource = mockDOMSource;
 
-},{"@cycle/run/lib/adapt":32,"xstream":541}],28:[function(require,module,exports){
+},{"@cycle/run/lib/adapt":32,"xstream":542}],28:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var class_1 = require("snabbdom/modules/class");
@@ -2858,7 +2858,7 @@ function toIsolated(scope) {
 }
 exports.toIsolated = toIsolated;
 
-},{"@cycle/run/lib/adapt":32,"xstream":541}],32:[function(require,module,exports){
+},{"@cycle/run/lib/adapt":32,"xstream":542}],32:[function(require,module,exports){
 (function (global){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -79232,7 +79232,7 @@ http.METHODS = [
 	'UNSUBSCRIBE'
 ]
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./lib/request":521,"./lib/response":522,"builtin-status-codes":37,"url":532,"xtend":542}],520:[function(require,module,exports){
+},{"./lib/request":521,"./lib/response":522,"builtin-status-codes":37,"url":532,"xtend":543}],520:[function(require,module,exports){
 (function (global){
 exports.fetch = isFunction(global.fetch) && isFunction(global.ReadableStream)
 
@@ -82252,7 +82252,7 @@ function concat() {
 }
 exports.default = concat;
 
-},{"../index":541}],537:[function(require,module,exports){
+},{"../index":542}],537:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../index");
@@ -82346,7 +82346,7 @@ function delay(period) {
 }
 exports.default = delay;
 
-},{"../index":541}],538:[function(require,module,exports){
+},{"../index":542}],538:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../index");
@@ -82466,7 +82466,7 @@ function dropRepeats(isEqual) {
 }
 exports.default = dropRepeats;
 
-},{"../index":541}],539:[function(require,module,exports){
+},{"../index":542}],539:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../index");
@@ -82525,7 +82525,98 @@ function fromEvent(element, eventName, useCapture) {
 }
 exports.default = fromEvent;
 
-},{"../index":541}],540:[function(require,module,exports){
+},{"../index":542}],540:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var index_1 = require("../index");
+var PairwiseOperator = /** @class */ (function () {
+    function PairwiseOperator(ins) {
+        this.ins = ins;
+        this.type = 'pairwise';
+        this.val = null;
+        this.has = false;
+        this.out = null;
+    }
+    PairwiseOperator.prototype._start = function (out) {
+        this.out = out;
+        this.ins._add(this);
+    };
+    PairwiseOperator.prototype._stop = function () {
+        this.ins._remove(this);
+        this.has = false;
+        this.out = null;
+        this.val = null;
+    };
+    PairwiseOperator.prototype._n = function (t) {
+        var u = this.out;
+        if (!u)
+            return;
+        if (this.has) {
+            var prev = this.val;
+            this.val = t;
+            u._n([prev, t]);
+        }
+        else {
+            this.val = t;
+            this.has = true;
+        }
+    };
+    PairwiseOperator.prototype._e = function (err) {
+        var u = this.out;
+        if (!u)
+            return;
+        u._e(err);
+    };
+    PairwiseOperator.prototype._c = function () {
+        var u = this.out;
+        if (!u)
+            return;
+        u._c();
+    };
+    return PairwiseOperator;
+}());
+/**
+ * Group consecutive pairs of events as arrays. Each array has two items.
+ *
+ * Marble diagram:
+ *
+ * ```text
+ * ---1---2-----3-----4-----5--------|
+ *       pairwise
+ * -------[1,2]-[2,3]-[3,4]-[4,5]----|
+ * ```
+ *
+ * Example:
+ *
+ * ```js
+ * import pairwise from 'xstream/extra/pairwise'
+ *
+ * const stream = xs.of(1, 2, 3, 4, 5, 6).compose(pairwise)
+ *
+ * stream.addListener({
+ *   next: i => console.log(i),
+ *   error: err => console.error(err),
+ *   complete: () => console.log('completed')
+ * })
+ * ```
+ *
+ * ```text
+ * > [1,2]
+ * > [2,3]
+ * > [3,4]
+ * > [4,5]
+ * > [5,6]
+ * > completed
+ * ```
+ *
+ * @return {Stream}
+ */
+function pairwise(ins) {
+    return new index_1.Stream(new PairwiseOperator(ins));
+}
+exports.default = pairwise;
+
+},{"../index":542}],541:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../index");
@@ -82701,7 +82792,7 @@ sampleCombine = function sampleCombine() {
 };
 exports.default = sampleCombine;
 
-},{"../index":541}],541:[function(require,module,exports){
+},{"../index":542}],542:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -84448,7 +84539,7 @@ exports.MemoryStream = MemoryStream;
 var xs = Stream;
 exports.default = xs;
 
-},{"symbol-observable":524}],542:[function(require,module,exports){
+},{"symbol-observable":524}],543:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -84469,7 +84560,113 @@ function extend() {
     return target
 }
 
-},{}],543:[function(require,module,exports){
+},{}],544:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+exports.default = FSMViz;
+
+var _xstream = require('xstream');
+
+var _xstream2 = _interopRequireDefault(_xstream);
+
+var _dropRepeats = require('xstream/extra/dropRepeats');
+
+var _dropRepeats2 = _interopRequireDefault(_dropRepeats);
+
+var _pairwise = require('xstream/extra/pairwise');
+
+var _pairwise2 = _interopRequireDefault(_pairwise);
+
+var _dagreD = require('./dagreD3');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function FSMViz(sources) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  var vdom$ = sources.DagreD3.filter(function (v) {
+    return v.type === 'VDOM';
+  }).map(function (v) {
+    return v.value;
+  });
+
+  var svgReadyFirst$ = !!options.svgReadyFirst$ ? options.svgReadyFirst$ : sources.DOM.select('svg.dagre-d3').element().take(1);
+  var g$ = !!options.g$ ? options.g$ : sources.state.stream.filter(function (rs) {
+    return !!rs.g;
+  }).map(function (rs) {
+    return rs.g;
+  }).take(1);
+  var selectedStateId$ = !!options.selectedStateId$ ? options.selectedStateId$ : sources.DagreD3.filter(function (v) {
+    return v.type === 'CLICK' && v.value.type === 'NODE';
+  }).map(function (v) {
+    return v.value.value;
+  });
+  var fsmStateId$ = !!options.fsmStateId$ ? options.fsmStateId$ : sources.state.stream.filter(function (rs) {
+    return !!rs.stateStamped && !!rs.stateStamped.state;
+  }).compose((0, _dropRepeats2.default)(function (rs1, rs2) {
+    return rs1.stateStamped.stamp === rs2.stateStamped.stamp;
+  })).map(function (rs) {
+    return rs.stateStamped.state;
+  });
+
+  var graph$ = g$.map(function (g) {
+    return (0, _dagreD.createGraph)(g.states, g.edges);
+  }).take(1);
+  var dagre$ = _xstream2.default.merge(_xstream2.default.combine(svgReadyFirst$, graph$).map(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+        _ = _ref2[0],
+        graph = _ref2[1];
+
+    return graph;
+  }), _xstream2.default.combine(selectedStateId$.startWith(null), graph$).compose(_pairwise2.default).map(function (_ref3) {
+    var _ref4 = _slicedToArray(_ref3, 2),
+        _ref4$ = _slicedToArray(_ref4[0], 2),
+        prevSId = _ref4$[0],
+        _ = _ref4$[1],
+        _ref4$2 = _slicedToArray(_ref4[1], 2),
+        sId = _ref4$2[0],
+        graph = _ref4$2[1];
+
+    prevSId !== null && graph.setNode(prevSId, _extends({}, graph.node(prevSId), {
+      style: 'stroke: #333; fill: #fff'
+    }));
+    return graph.setNode(sId, _extends({}, graph.node(sId), {
+      style: 'stroke: #333; fill: #ef8a62'
+    }));
+  }), _xstream2.default.combine(fsmStateId$.startWith(null), graph$).compose(_pairwise2.default).map(function (_ref5) {
+    var _ref6 = _slicedToArray(_ref5, 2),
+        _ref6$ = _slicedToArray(_ref6[0], 2),
+        prevSId = _ref6$[0],
+        _ = _ref6$[1],
+        _ref6$2 = _slicedToArray(_ref6[1], 2),
+        sId = _ref6$2[0],
+        graph = _ref6$2[1];
+
+    prevSId !== null && graph.setNode(prevSId, _extends({}, graph.node(prevSId), {
+      style: 'stroke: #333; fill: #fff'
+    }));
+    return graph.setNode(sId, _extends({}, graph.node(sId), {
+      style: 'stroke: #333; fill: #91bfdb'
+    }));
+  }));
+
+  return {
+    DOM: vdom$,
+    DagreD3: dagre$,
+    g: g$,
+    selectedStateId: selectedStateId$
+  };
+}
+
+},{"./dagreD3":546,"xstream":542,"xstream/extra/dropRepeats":538,"xstream/extra/pairwise":540}],545:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -84578,7 +84775,7 @@ function makeStreamingChartDriver(config) {
   return streamingChartDriver;
 }
 
-},{"chart.js":38,"chartjs-plugin-streaming":93,"xstream/extra/fromEvent":539}],544:[function(require,module,exports){
+},{"chart.js":38,"chartjs-plugin-streaming":93,"xstream/extra/fromEvent":539}],546:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -84687,7 +84884,7 @@ function makeDagreD3Driver() {
   return dagreD3Driver;
 }
 
-},{"@cycle/dom":24,"@cycle/run/lib/adapt":32,"d3":131,"dagre-d3":132,"xstream":541}],545:[function(require,module,exports){
+},{"@cycle/dom":24,"@cycle/run/lib/adapt":32,"d3":131,"dagre-d3":132,"xstream":542}],547:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -84729,20 +84926,46 @@ Object.defineProperty(exports, 'makeStreamingChartDriver', {
 
 var _withEngagementManagement = require('./withEngagementManagement');
 
+Object.defineProperty(exports, 'withEngagementManagement', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_withEngagementManagement).default;
+  }
+});
 Object.defineProperty(exports, 'withEngagementManagementState', {
   enumerable: true,
   get: function get() {
     return _withEngagementManagement.S;
   }
 });
-Object.defineProperty(exports, 'withEngagementManagement', {
+
+var _recorder_helpers = require('./recorder_helpers');
+
+Object.defineProperty(exports, 'makeDownloadDataDriver', {
   enumerable: true,
   get: function get() {
-    return _withEngagementManagement.withEngagementManagement;
+    return _recorder_helpers.makeDownloadDataDriver;
+  }
+});
+Object.defineProperty(exports, 'DataDownloader', {
+  enumerable: true,
+  get: function get() {
+    return _recorder_helpers.DataDownloader;
   }
 });
 
-},{"./chart":543,"./dagreD3":544,"./mediaRecorder":546,"./withEngagementManagement":547}],546:[function(require,module,exports){
+var _FSMViz = require('./FSMViz');
+
+Object.defineProperty(exports, 'FSMViz', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_FSMViz).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+},{"./FSMViz":544,"./chart":545,"./dagreD3":546,"./mediaRecorder":548,"./recorder_helpers":549,"./withEngagementManagement":550}],548:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -84840,7 +85063,124 @@ var makeMediaRecorderDriver = exports.makeMediaRecorderDriver = function makeMed
   return videoRecorderDriver;
 };
 
-},{"@cycle/run/lib/adapt":32,"xstream":541,"xstream/extra/delay":537}],547:[function(require,module,exports){
+},{"@cycle/run/lib/adapt":32,"xstream":542,"xstream/extra/delay":537}],549:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+exports.makeDownloadDataDriver = makeDownloadDataDriver;
+exports.DataDownloader = DataDownloader;
+
+var _xstream = require('xstream');
+
+var _xstream2 = _interopRequireDefault(_xstream);
+
+var _delay = require('xstream/extra/delay');
+
+var _delay2 = _interopRequireDefault(_delay);
+
+var _sampleCombine = require('xstream/extra/sampleCombine');
+
+var _sampleCombine2 = _interopRequireDefault(_sampleCombine);
+
+var _dom = require('@cycle/dom');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function makeDownloadDataDriver() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { recordVideo: true },
+      recordVideo = _ref.recordVideo;
+
+  var downloadDataDriver = function downloadDataDriver(sink$) {
+    var createDownloadLinkElement = function createDownloadLinkElement(id, href, filename) {
+      var a = document.createElement('a');
+      a.id = id;
+      a.href = href;
+      a.download = filename;
+      return a;
+    };
+    var jsonData$ = sink$.filter(function (v) {
+      return v.type === 'JSON';
+    }).map(function (v) {
+      return window.URL.createObjectURL(new Blob([JSON.stringify(v.value)], { type: 'application/json' }));
+    });
+    var videoData$ = sink$.filter(function (v) {
+      return v.type === 'VIDEO';
+    }).map(function (v) {
+      return window.URL.createObjectURL(new Blob(v.value, { 'type': 'video/mp4' }));
+    });
+    if (recordVideo) {
+      var data$ = _xstream2.default.combine(jsonData$, videoData$);
+      sink$.filter(function (v) {
+        return v.type === 'DOWNLOAD';
+      }).compose((0, _sampleCombine2.default)(data$)).addListener({
+        next: function next(_ref2) {
+          var _ref3 = _slicedToArray(_ref2, 2),
+              _ = _ref3[0],
+              data = _ref3[1];
+
+          var filename = 'Bag ' + new Date().toLocaleString();
+          var a1 = createDownloadLinkElement('dl-json', data[0], filename);
+          var a2 = createDownloadLinkElement('dl-video', data[1], filename);
+          a1.click();
+          a2.click();
+        }
+      });
+    } else {
+      sink$.filter(function (v) {
+        return v.type === 'DOWNLOAD';
+      }).compose((0, _sampleCombine2.default)(jsonData$)).addListener({
+        next: function next(_ref4) {
+          var _ref5 = _slicedToArray(_ref4, 2),
+              _ = _ref5[0],
+              jsonData = _ref5[1];
+
+          var filename = 'Bag ' + new Date().toLocaleString();
+          var a1 = createDownloadLinkElement('dl-json', jsonData, filename);
+          a1.click();
+        }
+      });
+    }
+  };
+  return downloadDataDriver;
+}
+
+function DataDownloader(sources, data$) {
+  var downloadClick$ = sources.DOM.select('.download').events('click');
+  var vdom$ = !!sources.VideoRecorder ? downloadClick$.take(1).mapTo(true).startWith(false).map(function (disabled) {
+    return (0, _dom.button)('.download', { props: { disabled: disabled } }, 'Download');
+  }) : _xstream2.default.of((0, _dom.button)('.download', 'Download'));
+
+  var downloadData$ = !!sources.VideoRecorder ? _xstream2.default.merge(data$.map(function (v) {
+    return { type: 'JSON', value: v };
+  }), sources.VideoRecorder.filter(function (v) {
+    return v.type === 'BLOBS';
+  })
+  // it expects VideoRecorder to run on start
+  .map(function (v) {
+    return { type: 'VIDEO', value: v.value };
+  }), sources.VideoRecorder.filter(function (v) {
+    return v.type === 'BLOBS';
+  })
+  // HACK! similar to setTimeout(..., 0)
+  .mapTo({ type: 'DOWNLOAD' }).compose((0, _delay2.default)(0))) : _xstream2.default.merge(data$.map(function (v) {
+    return { type: 'JSON', value: v };
+  }), downloadClick$.mapTo({ type: 'DOWNLOAD' }));
+
+  var videoRecorder$ = !!sources.VideoRecorder ? downloadClick$.mapTo('STOP') : _xstream2.default.never();
+
+  return {
+    DOM: vdom$,
+    DownloadDataDriver: downloadData$,
+    VideoRecorder: videoRecorder$
+  };
+}
+
+},{"@cycle/dom":24,"xstream":542,"xstream/extra/delay":537,"xstream/extra/sampleCombine":541}],550:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -84852,7 +85192,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-exports.withEngagementManagement = withEngagementManagement;
+exports.default = withEngagementManagement;
 
 var _xstream = require('xstream');
 
@@ -84890,10 +85230,12 @@ var SIGType = {
 
 function createInput() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref$transitionParame = _ref.transitionParameters.theta_fs,
-      theta_fs = _ref$transitionParame === undefined ? 1000 : _ref$transitionParame,
+      _ref$transitionParame = _ref.transitionParameters,
+      transitionParameters = _ref$transitionParame === undefined ? {} : _ref$transitionParame,
       _ref$enableOverideEng = _ref.enableOverideEngage,
       enableOverideEngage = _ref$enableOverideEng === undefined ? false : _ref$enableOverideEng;
+
+  var theta_fs = typeof transitionParameters.theta_fs === 'undefined' ? 1000 : transitionParameters.theta_fs;
 
   var input = function input(poses$, actionResult$, features$, twoSpeechbubblesResult$, speechSynthesisResult$) {
     return _xstream2.default.merge(poses$.map(function (poses) {
@@ -85237,5 +85579,5 @@ function withEngagementManagement(main) {
   return mainWithEngagementManagement;
 }
 
-},{"@cycle-robot-drivers/action":1,"@cycle-robot-drivers/actionbank":8,"@cycle/isolate":31,"xstream":541,"xstream/extra/dropRepeats":538}]},{},[545])(545)
+},{"@cycle-robot-drivers/action":1,"@cycle-robot-drivers/actionbank":8,"@cycle/isolate":31,"xstream":542,"xstream/extra/dropRepeats":538}]},{},[547])(547)
 });

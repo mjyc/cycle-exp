@@ -1,6 +1,6 @@
 {
   "name": "@mjyc/cycle-exp",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Mike's Experimental Cycle.js Code",
   "main": "lib/index.js",
   "scripts": {
