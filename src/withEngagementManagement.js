@@ -47,13 +47,13 @@ function createInput({
             ? {type: SIGType.ENGAGE_START}
             : {type: SIGType.ENGAGE_DONE}
         ).compose(dropRepeats((a, b) => a.type === b.type)),
-      features$
-        .filter(f => !!f.noseOrientation)
-        .map(
-          f => (f.noseOrientation > 1.9 || f.noseOrientation < 1.4)
-            ? {type: SIGType.MAINTAIN_START}
-            : {type: SIGType.MAINTAIN_DONE},
-        ).compose(dropRepeats((a, b) => a.type === b.type)),
+      //features$
+      //  .filter(f => !!f.noseOrientation)
+      //  .map(
+      //    f => (f.noseOrientation > 1.9 || f.noseOrientation < 1.4)
+      //      ? {type: SIGType.MAINTAIN_START}
+      //      : {type: SIGType.MAINTAIN_DONE},
+      //  ).compose(dropRepeats((a, b) => a.type === b.type)),
       enableOverideEngage
         ? twoSpeechbubblesResult$
           .filter(r => r.result === 'Hello!')
